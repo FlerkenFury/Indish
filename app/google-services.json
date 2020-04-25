@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "667290683729",
+    "firebase_url": "https://indish-b2180.firebaseio.com",
+    "project_id": "indish-b2180",
+    "storage_bucket": "indish-b2180.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:667290683729:android:07afe7d3c8a5353e6d6b70",
+        "android_client_info": {
+          "package_name": "project.indish"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "667290683729-31sqcakta6q62usht5e8ehk2866cusit.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "project.indish",
+            "certificate_hash": "44f3dee3a4d27f98840f1e0f75c7a67e425336a2"
+          }
+        },
+        {
+          "client_id": "667290683729-74tjjl2q1ijb86hhlsa2ipe2h6u8nlv3.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBPp4R1SbIW0hI9zQ8GGtUhim196DoZHWw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "667290683729-74tjjl2q1ijb86hhlsa2ipe2h6u8nlv3.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
