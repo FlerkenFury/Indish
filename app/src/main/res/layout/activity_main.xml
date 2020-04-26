@@ -7,26 +7,37 @@
     tools:context=".MainActivity"
     android:orientation="vertical"
     android:gravity="center_horizontal"
-    android:padding="50dp"
+    android:padding="20dp"
     android:id="@+id/ll_main">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="What should I cook with..."
-        android:textSize="20sp"/>
 
-    <Spinner
-        android:id="@+id/main_spinner_ingredient"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_margin="20dp"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="What should I cook with..."
+            android:layout_marginTop="20dp"
+            android:textSize="20sp"/>
 
-    <Button
-        android:layout_margin="10dp"
-        android:id="@+id/btn_main_search"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Search"/>
+        <com.toptoche.searchablespinnerlibrary.SearchableSpinner
+            android:id="@+id/main_spinner_ingredient"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="20dp"/>
+
+
+        <Button
+            android:id="@+id/btn_main_search"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Search"/>
+
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rv_main_recipes"
+            android:layout_marginBottom="10dp"
+            android:layout_marginTop="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
 
 </LinearLayout>

@@ -22,6 +22,10 @@ public class Ingredient {
         this.name = name;
     }
 
+    public String toString(){
+        return name;
+    }
+
 //    public String getAmount() {
 //        return amount;
 //    }
