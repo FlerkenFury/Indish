@@ -3,6 +3,7 @@ package project.indish;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -64,6 +65,9 @@ public class LoginActivity extends AppCompatActivity {
                 if(!email.isEmpty() && !password.isEmpty()){
                     mAuth.signInWithEmailAndPassword(email, password);
                     Toast.makeText(LoginActivity.this, "Signed in", Toast.LENGTH_SHORT).show();
+                    Intent intent = new Intent(LoginActivity.this, MainActivity.class);
+                    startActivity(intent);
+                    finish();
                 }
                 else {
                     Toast.makeText(LoginActivity.this, "Please fill in the data", Toast.LENGTH_SHORT).show();
