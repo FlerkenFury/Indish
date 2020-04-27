@@ -1,22 +1,25 @@
 package project.indish;
 
 import androidx.annotation.NonNull;
-import androidx.appcompat.app.AppCompatActivity;
+import androidx.annotation.Nullable;
+import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.os.Bundle;
 import android.util.Log;
+import android.view.LayoutInflater;
+import android.view.MotionEvent;
 import android.view.View;
+import android.view.ViewGroup;
+import android.view.inputmethod.InputMethodManager;
 import android.widget.Button;
-import android.widget.RelativeLayout;
 import android.widget.Spinner;
 
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
-import com.google.firebase.database.Query;
 import com.google.firebase.database.ValueEventListener;
 
 import java.lang.reflect.Field;
@@ -28,9 +31,9 @@ import project.indish.adapter.RecipeCardAdapter;
 import project.indish.model.Ingredient;
 import project.indish.model.Recipe;
 
-public class MainActivity extends AppCompatActivity {
+public class MainFragment extends Fragment {
 
-    private static final String TAG = "MainActivity";
+    private static final String TAG = "MainFragment";
 
     private Spinner spinnerIngredient;
     private Button btnSearch;
@@ -41,14 +44,15 @@ public class MainActivity extends AppCompatActivity {
 
     private List<Ingredient> newIngredients;
 
+    @Nullable
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+    public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
+        final View view = inflater.inflate(R.layout.fragment_main, container, false);
 
-        spinnerIngredient = findViewById(R.id.main_spinner_ingredient);
-        btnSearch = findViewById(R.id.btn_main_search);
-        recyclerViewCardRecipe = findViewById(R.id.rv_main_recipes);
+
+        spinnerIngredient = view.findViewById(R.id.main_spinner_ingredient);
+        btnSearch = view.findViewById(R.id.btn_main_search);
+        recyclerViewCardRecipe = view.findViewById(R.id.rv_main_recipes);
         newIngredients = new ArrayList<>();
 
         // Write a message to the database
@@ -57,38 +61,18 @@ public class MainActivity extends AppCompatActivity {
         DatabaseReference ingredientRef = database.getReference("ingredient");
 
 
-
-        try {
-            Field popup = null;
-            try {
-                popup = Spinner.class.getDeclaredField("mPopup");
-            } catch (NoSuchFieldException e) {
-                e.printStackTrace();
-            }
-            popup.setAccessible(true);
-
-            // Get private mPopup member variable and try cast to ListPopupWindow
-            android.widget.ListPopupWindow popupWindow = (android.widget.ListPopupWindow) popup.get(spinnerIngredient);
-
-            // Set popupWindow height to 500px
-            popupWindow.setHeight(500);
-        }
-        catch (NoClassDefFoundError | ClassCastException  | IllegalAccessException e) {
-            // silently fail...
-        }
-
         // Read from the database
         ingredientRef.addValueEventListener(new ValueEventListener() {
             ArrayList<Ingredient> ingredients = new ArrayList<>();
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
                 for (DataSnapshot snapShot:
-                     dataSnapshot.getChildren()) {
+                        dataSnapshot.getChildren()) {
                     Ingredient ingredient = snapShot.getValue(Ingredient.class);
                     ingredients.add(ingredient);
                 }
 
-                mIngredientAdapter = new IngredientAdapter(getApplicationContext(), ingredients);
+                mIngredientAdapter = new IngredientAdapter(getContext(), ingredients);
                 spinnerIngredient.setAdapter(mIngredientAdapter);
 
 
@@ -116,13 +100,13 @@ public class MainActivity extends AppCompatActivity {
                     public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
 
                         for (DataSnapshot snapShot:
-                             dataSnapshot.getChildren()) {
+                                dataSnapshot.getChildren()) {
                             Recipe recipe = snapShot.getValue(Recipe.class);
 
                             if (recipe.getIngredient() != null && !recipe.getIngredient().isEmpty()){
                                 Log.d(TAG, "asd: " + recipe.getName());
                                 for (Ingredient item:
-                                     recipe.getIngredient()) {
+                                        recipe.getIngredient()) {
                                     if(item.getName() != null && !item.getName().isEmpty() &&  item.getName().equalsIgnoreCase(query)){
                                         recipes.add(recipe);
                                         break;
@@ -133,9 +117,9 @@ public class MainActivity extends AppCompatActivity {
 
                         }
                         Log.d(TAG, "size: " + recipes.size() );
-                        mRecipeCardAdapter = new RecipeCardAdapter(getApplicationContext(), recipes);
+                        mRecipeCardAdapter = new RecipeCardAdapter(getContext(), recipes);
                         recyclerViewCardRecipe.setAdapter(mRecipeCardAdapter);
-                        recyclerViewCardRecipe.setLayoutManager(new LinearLayoutManager(getApplicationContext()));
+                        recyclerViewCardRecipe.setLayoutManager(new LinearLayoutManager(getContext()));
                     }
 
                     @Override
@@ -149,6 +133,8 @@ public class MainActivity extends AppCompatActivity {
 
             }
         });
+
+        return view;
 
     }
 
