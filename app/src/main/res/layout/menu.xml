@@ -59,6 +59,12 @@
                 >
             </TextView>
 
-
+            <androidx.recyclerview.widget.RecyclerView
+                android:layout_below="@+id/menu_name"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:id="@+id/menu_procedure"
+                >
+            </androidx.recyclerview.widget.RecyclerView>
 
 </RelativeLayout>

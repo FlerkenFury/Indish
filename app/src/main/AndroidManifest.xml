@@ -11,14 +11,14 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme.NoActionBar">
-        <activity android:name=".RecipeFragment"></activity>
-        <activity android:name=".HomeDrawerActivity">
+        <activity android:name=".MenuFragment">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".RecipeFragment"></activity>
+        <activity android:name=".HomeDrawerActivity"></activity>
         <activity android:name=".LoginActivity" />
         <activity android:name=".MainFragment"
             android:windowSoftInputMode="stateHidden"></activity>
