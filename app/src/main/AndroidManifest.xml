@@ -17,11 +17,14 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".RecipeFragment"></activity>
-        <activity android:name=".HomeDrawerActivity"></activity>
+        <activity android:name=".RecipeFragment">
+        </activity>
+        <activity android:name=".HomeDrawerActivity">
+        </activity>
         <activity android:name=".LoginActivity" />
         <activity android:name=".MainFragment"
-            android:windowSoftInputMode="stateHidden"></activity>
+            android:windowSoftInputMode="stateHidden">
+        </activity>
     </application>
 
 </manifest>

@@ -4,4 +4,6 @@
     <string name="navigation_drawer_close">Close navigation drawer</string>
     <string name="menu_name">Tal’s Tahini bread pudding</string>
     <string name="menu_desc">A delicious baked dessert that takes 5 minutes to make!</string>
+    <string name="title_i">What do we need?</string>
+    <string name="title_p">How to make it?</string>
 </resources>

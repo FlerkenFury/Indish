@@ -16,27 +16,31 @@ import java.util.ArrayList;
 
 import project.indish.R;
 
-public class MenuProcedureAdapter extends RecyclerView.Adapter<MenuProcedureAdapter.MenuViewHolder>{
+public class MenuProcedureAdapter extends RecyclerView.Adapter<MenuProcedureAdapter.MenuViewHolderProcedure>{
     private static final String TAG = "MenuProcedureAdapter";
     private ArrayList<String> mStepList = new ArrayList<>();
     private Context mContext;
 
     public MenuProcedureAdapter(ArrayList<String> stepList, Context context) {
         this.mStepList = stepList;
+        for (int i=0;i<stepList.size();i++) {
+            mStepList.set(i, (i+1) + ") " + mStepList.get(i));
+        }
+
         this.mContext = context;
     }
 
     @NonNull
     @Override
-    public MenuViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.menu_item, parent, false);
-        MenuViewHolder holder = new MenuViewHolder(view);
+    public MenuViewHolderProcedure onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.menu_procedure, parent, false);
+        MenuViewHolderProcedure holder = new MenuViewHolderProcedure(view);
 
         return holder;
     }
 
     @Override
-    public void onBindViewHolder(@NonNull MenuViewHolder holder, final int position) {
+    public void onBindViewHolder(@NonNull MenuViewHolderProcedure holder, final int position) {
         Log.d(TAG, "onBindViewHolder: called");
 
         holder.step.setText(mStepList.get(position));
@@ -53,11 +57,11 @@ public class MenuProcedureAdapter extends RecyclerView.Adapter<MenuProcedureAdap
         return mStepList.size();
     }
 
-    public class MenuViewHolder extends RecyclerView.ViewHolder{
+    public class MenuViewHolderProcedure extends RecyclerView.ViewHolder{
 
         TextView step;
         RelativeLayout parentMenu;
-        public MenuViewHolder(@NonNull View itemView) {
+        public MenuViewHolderProcedure(@NonNull View itemView) {
             super(itemView);
             step = itemView.findViewById(R.id.menu_step);
             parentMenu = itemView.findViewById(R.id.parent_menu);
