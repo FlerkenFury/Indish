@@ -13,17 +13,18 @@
         android:theme="@style/AppTheme.NoActionBar">
         <activity android:name=".AddRecipeFragment"></activity>
         <activity android:name=".RecipeFragment" />
+        <activity android:name=".MenuFragment">
+        </activity>
         <activity android:name=".HomeDrawerActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
         <activity android:name=".LoginActivity" />
-        <activity
-            android:name=".MainFragment"
-            android:windowSoftInputMode="stateHidden" />
+        <activity android:name=".MainFragment"
+            android:windowSoftInputMode="stateHidden">
+        </activity>
     </application>
 
 </manifest>

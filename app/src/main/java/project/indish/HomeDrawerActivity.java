@@ -7,6 +7,7 @@ import androidx.appcompat.widget.Toolbar;
 import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
 
@@ -27,36 +28,49 @@ public class HomeDrawerActivity extends AppCompatActivity {
         setSupportActionBar(toolbar);
         drawerLayout = findViewById(R.id.drawer_layout);
 
+
+        Intent intent = getIntent();
+        final String recipeName =  intent.getStringExtra("name");
+
         NavigationView navigationView = findViewById(R.id.nav_view);
-        navigationView.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener() {
-            @Override
-            public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {
-                switch (menuItem.getItemId()) {
-                    case R.id.nav_ingredient:
-                        getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, new MainFragment()).commit();
-                        break;
-                    case R.id.nav_read_recipe:
-                        getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, new RecipeFragment()).commit();
-                        break;
-                    case R.id.nav_add_recipe:
-                        getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, new AddRecipeFragment()).commit();
-                        break;
-                }
-                drawerLayout.closeDrawer(GravityCompat.START);
 
-                return true;
-            }
-        });
-
-
-        ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(this, drawerLayout, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
-        drawerLayout.addDrawerListener(toggle);
-        toggle.syncState();
-
-        if (savedInstanceState == null) {
-            getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, new MainFragment()).commit();
-            navigationView.setCheckedItem(R.id.nav_ingredient);
+        if (recipeName!= null && !recipeName.trim().equalsIgnoreCase("")){
+            getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, new MenuFragment(recipeName)).commit();
+            drawerLayout.closeDrawer(GravityCompat.START);
         }
+        else {
+
+            navigationView.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener() {
+                @Override
+                public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {
+                    switch (menuItem.getItemId()) {
+                        case R.id.nav_ingredient:
+                            getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, new MainFragment()).commit();
+                            break;
+                        case R.id.nav_read_recipe:
+                            getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, new RecipeFragment()).commit();
+                            break;
+                        case R.id.nav_add_recipe:
+                            getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, new AddRecipeFragment()).commit();
+                            break;
+                    }
+                    drawerLayout.closeDrawer(GravityCompat.START);
+
+                    return true;
+                }
+            });
+
+
+            ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(this, drawerLayout, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
+            drawerLayout.addDrawerListener(toggle);
+            toggle.syncState();
+
+            if (savedInstanceState == null) {
+                getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, new MainFragment()).commit();
+                navigationView.setCheckedItem(R.id.nav_ingredient);
+            }
+        }
+
 
     }
 

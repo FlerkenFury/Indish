@@ -1,6 +1,7 @@
 package project.indish.adapter;
 
 import android.content.Context;
+import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.os.AsyncTask;
@@ -12,6 +13,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
+import androidx.cardview.widget.CardView;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
@@ -20,6 +22,8 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.util.List;
 
+import project.indish.HomeDrawerActivity;
+import project.indish.MenuFragment;
 import project.indish.R;
 import project.indish.model.Recipe;
 
@@ -47,12 +51,12 @@ public class RecipeCardAdapter extends RecyclerView.Adapter<RecipeCardAdapter.Vi
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
 
-        Recipe recipe = recipes.get(position);
+        final Recipe recipe = recipes.get(position);
 
         holder.cardTitle.setText(recipe.getName());
         holder.cardDesc.setText(recipe.getDescription());
 
-        if (!recipe.getImage().isEmpty()) {
+        if (recipe.getImage() != null &&  !recipe.getImage().isEmpty()) {
             Log.d(TAG, "onBindViewHolder: " + recipe.getImage());
 
             Glide.with(mContext)
@@ -60,6 +64,17 @@ public class RecipeCardAdapter extends RecyclerView.Adapter<RecipeCardAdapter.Vi
                     .placeholder(R.drawable.image_loader)
                     .into(holder.cardImage);
         }
+
+
+        holder.cardContent.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(mContext, HomeDrawerActivity.class);
+                intent.putExtra("name", recipe.getName());
+                mContext.startActivity(intent);
+            }
+        });
+
 
     }
 
@@ -73,12 +88,15 @@ public class RecipeCardAdapter extends RecyclerView.Adapter<RecipeCardAdapter.Vi
 
         TextView cardTitle, cardDesc;
         ImageView cardImage;
+        CardView cardContent;
 
         public ViewHolder(@NonNull View itemView){
             super(itemView);
             cardTitle = itemView.findViewById(R.id.card_recipe_title);
             cardDesc = itemView.findViewById(R.id.card_recipe_desc);
             cardImage = itemView.findViewById(R.id.card_recipe_image);
+            cardContent = itemView.findViewById(R.id.cv_recipe_card);
+
         }
 
     }

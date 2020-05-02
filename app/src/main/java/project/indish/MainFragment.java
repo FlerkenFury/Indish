@@ -3,9 +3,12 @@ package project.indish;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentTransaction;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -15,6 +18,7 @@ import android.view.ViewGroup;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.Button;
 import android.widget.Spinner;
+import android.widget.Toast;
 
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -49,7 +53,6 @@ public class MainFragment extends Fragment {
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         final View view = inflater.inflate(R.layout.fragment_main, container, false);
 
-
         spinnerIngredient = view.findViewById(R.id.main_spinner_ingredient);
         btnSearch = view.findViewById(R.id.btn_main_search);
         recyclerViewCardRecipe = view.findViewById(R.id.rv_main_recipes);
@@ -59,7 +62,6 @@ public class MainFragment extends Fragment {
         final FirebaseDatabase database = FirebaseDatabase.getInstance();
         final DatabaseReference recipeRef = database.getReference("recipe");
         DatabaseReference ingredientRef = database.getReference("ingredient");
-
 
         // Read from the database
         ingredientRef.addValueEventListener(new ValueEventListener() {
@@ -74,8 +76,6 @@ public class MainFragment extends Fragment {
 
                 mIngredientAdapter = new IngredientAdapter(getContext(), ingredients);
                 spinnerIngredient.setAdapter(mIngredientAdapter);
-
-
             }
 
             @Override
@@ -84,7 +84,6 @@ public class MainFragment extends Fragment {
                 Log.w(TAG, "Failed to read value.", error.toException());
             }
         });
-
 
         btnSearch.setOnClickListener(new View.OnClickListener() {
             @Override
