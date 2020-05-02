@@ -11,7 +11,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme.NoActionBar">
-        <activity android:name=".RecipeFragment"></activity>
+        <activity android:name=".AddRecipeFragment"></activity>
+        <activity android:name=".RecipeFragment" />
         <activity android:name=".HomeDrawerActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -20,8 +21,9 @@
             </intent-filter>
         </activity>
         <activity android:name=".LoginActivity" />
-        <activity android:name=".MainFragment"
-            android:windowSoftInputMode="stateHidden"></activity>
+        <activity
+            android:name=".MainFragment"
+            android:windowSoftInputMode="stateHidden" />
     </application>
 
 </manifest>

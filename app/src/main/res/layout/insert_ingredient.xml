@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent" android:layout_height="wrap_content">
+
+
+    <EditText
+        android:id="@+id/et_unit"
+        android:layout_width="50dp"
+        android:layout_height="wrap_content"
+        android:inputType="numberDecimal" />
+
+    <project.indish.DynamicWidthSpinner
+        android:id="@+id/spinner_unit"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@id/et_unit"/>
+
+    <EditText
+        android:id="@+id/et_add_ingredient"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@id/spinner_unit"
+        android:layout_toLeftOf="@id/btn_add_ingredient"/>
+
+    <ImageView
+        android:id="@+id/btn_add_ingredient"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:clickable="true"
+        android:src="@drawable/plus_button"
+        android:layout_toLeftOf="@id/btn_delete_ingredient"/>
+
+    <ImageView
+        android:id="@+id/btn_delete_ingredient"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:clickable="true"
+        android:src="@drawable/ic_delete_forever_black_24dp"
+        android:layout_alignParentRight="true"/>
+
+</RelativeLayout>

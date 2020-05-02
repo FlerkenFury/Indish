@@ -5,10 +5,13 @@ public class Ingredient {
     private String amount;
     private String unit;
     private String name;
+    private int index;
 
     public Ingredient() {
 
     }
+
+
 
     public Ingredient(String name) {
         this.name = name;
@@ -26,19 +29,27 @@ public class Ingredient {
         return name;
     }
 
-//    public String getAmount() {
-//        return amount;
-//    }
-//
-//    public void setAmount(String amount) {
-//        this.amount = amount;
-//    }
-//
-//    public String getUnit() {
-//        return unit;
-//    }
-//
-//    public void setUnit(String unit) {
-//        this.unit = unit;
-//    }
+    public String getAmount() {
+        return amount;
+    }
+
+    public void setAmount(String amount) {
+        this.amount = amount;
+    }
+
+    public String getUnit() {
+        return unit;
+    }
+
+    public void setUnit(String unit) {
+        this.unit = unit;
+    }
+
+    public int getIndex() {
+        return index;
+    }
+
+    public void setIndex(int index) {
+        this.index = index;
+    }
 }

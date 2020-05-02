@@ -54,8 +54,6 @@ public class RecipeCardAdapter extends RecyclerView.Adapter<RecipeCardAdapter.Vi
 
         if (!recipe.getImage().isEmpty()) {
             Log.d(TAG, "onBindViewHolder: " + recipe.getImage());
-//            LoadImage loadImage = new LoadImage(holder.cardImage);
-//            loadImage.execute(recipe.getImage());
 
             Glide.with(mContext)
                     .load(recipe.getImage())
@@ -83,33 +81,6 @@ public class RecipeCardAdapter extends RecyclerView.Adapter<RecipeCardAdapter.Vi
             cardImage = itemView.findViewById(R.id.card_recipe_image);
         }
 
-    }
-
-    public class LoadImage extends AsyncTask<String, Void, Bitmap> {
-
-        ImageView imageView;
-
-        public LoadImage (ImageView imageView){
-            this.imageView = imageView;
-        }
-
-        @Override
-        protected Bitmap doInBackground(String... strings) {
-            String urlLink =  strings[0];
-            Bitmap bitmap = null;
-            try {
-                InputStream inputStream = new java.net.URL(urlLink).openStream();
-                bitmap = BitmapFactory.decodeStream(inputStream);
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
-            return bitmap;
-        }
-
-        @Override
-        protected void onPostExecute(Bitmap bitmap) {
-            imageView.setImageBitmap(bitmap);
-        }
     }
 
 

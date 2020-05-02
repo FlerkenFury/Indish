@@ -39,7 +39,7 @@ public class HomeDrawerActivity extends AppCompatActivity {
                         getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, new RecipeFragment()).commit();
                         break;
                     case R.id.nav_add_recipe:
-                        getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, new MainFragment()).commit();
+                        getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, new AddRecipeFragment()).commit();
                         break;
                 }
                 drawerLayout.closeDrawer(GravityCompat.START);
