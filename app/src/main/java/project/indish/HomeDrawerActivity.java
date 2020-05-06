@@ -9,15 +9,24 @@ import androidx.drawerlayout.widget.DrawerLayout;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.TextView;
 
 import com.google.android.material.navigation.NavigationView;
+import com.google.firebase.auth.FirebaseAuth;
 
-public class HomeDrawerActivity extends AppCompatActivity {
+import project.indish.model.User;
+
+public class HomeDrawerActivity extends AppCompatActivity{
 
     private static final String TAG = "HomeDrawerActivity";
 
     private DrawerLayout drawerLayout;
+    private NavigationView navigationView;
+
+    TextView drawerName;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -27,6 +36,17 @@ public class HomeDrawerActivity extends AppCompatActivity {
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         drawerLayout = findViewById(R.id.drawer_layout);
+        navigationView = findViewById(R.id.nav_view);
+
+        SharedPref sharedPref = new SharedPref(HomeDrawerActivity.this);
+        User user = sharedPref.load();
+
+        Log.d(TAG, "onCreate: userName: " + user.getName());
+
+        View headerView = navigationView.getHeaderView(0);
+        drawerName = headerView.findViewById(R.id.nav_head_name);
+
+        drawerName.setText(user.getName());
 
 
         Intent intent = getIntent();
@@ -53,6 +73,9 @@ public class HomeDrawerActivity extends AppCompatActivity {
                         case R.id.nav_add_recipe:
                             getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, new AddRecipeFragment()).commit();
                             break;
+                        case R.id.nav_logout:
+                            logout();
+                            break;
                     }
                     drawerLayout.closeDrawer(GravityCompat.START);
 
@@ -72,6 +95,17 @@ public class HomeDrawerActivity extends AppCompatActivity {
         }
 
 
+    }
+
+    public void logout(){
+        SharedPref sharedPref =  new SharedPref(HomeDrawerActivity.this);
+        sharedPref.clearAll(HomeDrawerActivity.this);
+
+        FirebaseAuth mAuth = FirebaseAuth.getInstance();
+        mAuth.signOut();
+        Intent intent = new Intent(HomeDrawerActivity.this, LoginActivity.class);
+        startActivity(intent);
+        finish();
     }
 
 

@@ -8,19 +8,17 @@
     android:theme="@style/ThemeOverlay.AppCompat.Light">
 
     <ImageView
+        android:id="@+id/nav_head_image"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:src="@mipmap/ic_launcher_round"/>
     <TextView
+        android:id="@+id/nav_head_name"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:paddingTop="8dp"
         android:text="Menu"
-        android:textAppearance="@style/TextAppearance.AppCompat.Body1"/>
+        android:theme="@style/Theme.AppCompat.Light"/>
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="test"/>
 
 </LinearLayout>
