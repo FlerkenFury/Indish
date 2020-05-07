@@ -3,7 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     tools:showIn="navigation_view">
 
-    <group
+    <group android:id="@+id/group1"
         android:checkableBehavior="single">
         <item android:id="@+id/nav_ingredient"
             android:title="What's in your fridge"/>
@@ -13,11 +13,12 @@
             android:title="Add new recipe"/>
     </group>
 
-    <item android:title="Profile">
-        <menu>
-            <item android:id="@+id/nav_logout"
-                android:title="Sign out"/>
-        </menu>
-    </item>
+    <group android:id="@+id/group2"
+        android:checkableBehavior="single">
+        <item android:id="@+id/nav_profile"
+            android:title="Profile"/>
+        <item android:id="@+id/nav_logout"
+            android:title="Sign out"/>
+    </group>
 
 </menu>

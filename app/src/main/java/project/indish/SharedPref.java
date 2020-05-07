@@ -19,6 +19,7 @@ public class SharedPref {
         editor.putString("UserEmail", user.getEmail());
         editor.putString("UserName", user.getName());
         editor.putString("UserImage", user.getImage());
+        editor.putString("UserPassword", user.getPassword());
         editor.apply();
     }
 
@@ -27,6 +28,7 @@ public class SharedPref {
         user.setEmail(sharedPreferences.getString("UserEmail", ""));
         user.setName(sharedPreferences.getString("UserName", ""));
         user.setImage(sharedPreferences.getString("UserImage", ""));
+        user.setPassword(sharedPreferences.getString("UserPassword", ""));
         return user;
     }
 

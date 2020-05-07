@@ -48,7 +48,6 @@ public class HomeDrawerActivity extends AppCompatActivity{
 
         drawerName.setText(user.getName());
 
-
         Intent intent = getIntent();
         final String recipeName =  intent.getStringExtra("name");
 
@@ -73,6 +72,9 @@ public class HomeDrawerActivity extends AppCompatActivity{
                         case R.id.nav_add_recipe:
                             getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, new AddRecipeFragment()).commit();
                             break;
+                        case R.id.nav_profile:
+                            getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, new ProfileFragment()).commit();
+                            break;
                         case R.id.nav_logout:
                             logout();
                             break;
@@ -94,7 +96,6 @@ public class HomeDrawerActivity extends AppCompatActivity{
             }
         }
 
-
     }
 
     public void logout(){
@@ -107,7 +108,6 @@ public class HomeDrawerActivity extends AppCompatActivity{
         startActivity(intent);
         finish();
     }
-
 
     @Override
     public void onBackPressed() {
