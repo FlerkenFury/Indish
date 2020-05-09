@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -9,45 +9,59 @@
     android:orientation="vertical"
     android:padding="50dp">
 
-    <EditText
-        android:id="@+id/login_et_email"
+<!--    <ImageView-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:src="@drawable/logo_indish"/>-->
+
+
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="Email"
-        android:inputType="textEmailAddress"
-        android:textColor="@color/colorAccent"
-        android:theme="@style/ThemeOverlay.AppCompat.Dark"
-        tools:layout_editor_absoluteY="273dp" />
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:orientation="vertical">
 
-    <EditText
-        android:layout_marginTop="20dp"
-        android:id="@+id/login_et_password"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="Password"
-        android:inputType="textPassword"
-        android:textColor="@color/colorAccent"
-        android:theme="@style/ThemeOverlay.AppCompat.Dark"
-        tools:layout_editor_absoluteY="329dp" />
 
-    <Button
-        android:layout_width="match_parent"
-        android:id="@+id/login_bt_signin"
-        android:layout_marginTop="20dp"
-        android:layout_height="wrap_content"
-        android:background="@color/colorAccent"
-        android:text="Sign in"
-        tools:layout_editor_absoluteX="161dp"
-        tools:layout_editor_absoluteY="455dp" />
+        <EditText
+            android:id="@+id/login_et_email"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Email"
+            android:inputType="textEmailAddress"
+            android:textColor="@color/colorAccent"
+            android:theme="@style/ThemeOverlay.AppCompat.Dark"
+            tools:layout_editor_absoluteY="273dp" />
 
-    <TextView
-        android:id="@+id/login_tv_regis"
-        android:layout_marginTop="10dp"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:clickable="true"
-        android:text="Doesn't have an account? Sign up here"
-        android:textColor="@color/colorAccent"
-        android:theme="@style/ThemeOverlay.AppCompat.Dark" />
+        <EditText
+            android:layout_marginTop="20dp"
+            android:id="@+id/login_et_password"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Password"
+            android:inputType="textPassword"
+            android:textColor="@color/colorAccent"
+            android:theme="@style/ThemeOverlay.AppCompat.Dark"
+            tools:layout_editor_absoluteY="329dp" />
 
-</LinearLayout>
+        <Button
+            android:layout_width="match_parent"
+            android:id="@+id/login_bt_signin"
+            android:layout_marginTop="20dp"
+            android:layout_height="wrap_content"
+            android:background="@color/colorAccent"
+            android:text="Sign in"
+            tools:layout_editor_absoluteX="161dp"
+            tools:layout_editor_absoluteY="455dp" />
+
+        <TextView
+            android:id="@+id/login_tv_regis"
+            android:layout_marginTop="10dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:clickable="true"
+            android:text="Doesn't have an account? Sign up here"
+            android:textColor="@color/colorAccent"
+            android:theme="@style/ThemeOverlay.AppCompat.Dark" />
+    </LinearLayout>
+
+</RelativeLayout>

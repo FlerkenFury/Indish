@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -9,40 +9,53 @@
     android:orientation="vertical"
     android:padding="50dp">
 
-    <EditText
-        android:id="@+id/regis_et_name"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="Full name"
-        android:textColor="@color/colorAccent"
-        android:theme="@style/ThemeOverlay.AppCompat.Dark"/>
+<!--    <ImageView-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:src="@drawable/logo_indish"/>-->
 
-    <EditText
-        android:layout_marginTop="20dp"
-        android:id="@+id/regis_et_email"
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="Email"
-        android:inputType="textEmailAddress"
-        android:textColor="@color/colorAccent"
-        android:theme="@style/ThemeOverlay.AppCompat.Dark"/>
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:orientation="vertical">
 
-    <EditText
-        android:layout_marginTop="20dp"
-        android:id="@+id/regis_et_password"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="Password"
-        android:inputType="textPassword"
-        android:textColor="@color/colorAccent"
-        android:theme="@style/ThemeOverlay.AppCompat.Dark"/>
+        <EditText
+            android:id="@+id/regis_et_name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Full name"
+            android:textColor="@color/colorAccent"
+            android:theme="@style/ThemeOverlay.AppCompat.Dark"/>
 
-    <Button
-        android:layout_width="match_parent"
-        android:id="@+id/regis_bt_signup"
-        android:layout_marginTop="20dp"
-        android:layout_height="wrap_content"
-        android:background="@color/colorAccent"
-        android:text="Sign Up"/>
+        <EditText
+            android:layout_marginTop="20dp"
+            android:id="@+id/regis_et_email"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Email"
+            android:inputType="textEmailAddress"
+            android:textColor="@color/colorAccent"
+            android:theme="@style/ThemeOverlay.AppCompat.Dark"/>
 
-</LinearLayout>
+        <EditText
+            android:layout_marginTop="20dp"
+            android:id="@+id/regis_et_password"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Password"
+            android:inputType="textPassword"
+            android:textColor="@color/colorAccent"
+            android:theme="@style/ThemeOverlay.AppCompat.Dark"/>
+
+        <Button
+            android:layout_width="match_parent"
+            android:id="@+id/regis_bt_signup"
+            android:layout_marginTop="20dp"
+            android:layout_height="wrap_content"
+            android:background="@color/colorAccent"
+            android:text="Sign Up"/>
+
+    </LinearLayout>
+
+</RelativeLayout>
