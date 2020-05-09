@@ -2,6 +2,7 @@ package project.indish.model;
 
 public class User {
 
+    private String UID;
     private String name;
     private String email;
     private String password;
@@ -11,11 +12,20 @@ public class User {
 
     }
 
-    public User(String name, String email, String password, String image) {
+    public User(String UID, String name, String email, String password, String image) {
+        this.UID = UID;
         this.name = name;
         this.email = email;
         this.password = password;
         this.image = image == null ? "" : image;
+    }
+
+    public String getUID() {
+        return UID;
+    }
+
+    public void setUID(String UID) {
+        this.UID = UID;
     }
 
     public String getName() {

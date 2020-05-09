@@ -12,8 +12,10 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.bumptech.glide.Glide;
 import com.google.android.material.navigation.NavigationView;
 import com.google.firebase.auth.FirebaseAuth;
 
@@ -27,6 +29,7 @@ public class HomeDrawerActivity extends AppCompatActivity{
     private NavigationView navigationView;
 
     TextView drawerName;
+    ImageView profilePic;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -45,8 +48,16 @@ public class HomeDrawerActivity extends AppCompatActivity{
 
         View headerView = navigationView.getHeaderView(0);
         drawerName = headerView.findViewById(R.id.nav_head_name);
+        profilePic = headerView.findViewById(R.id.nav_head_image);
 
         drawerName.setText(user.getName());
+
+        if (user.getImage() != null && !user.getImage().trim().isEmpty()){
+            Glide.with(HomeDrawerActivity.this)
+                    .load(user.getImage())
+                    .placeholder(R.drawable.image_loader)
+                    .into(profilePic);
+        }
 
         Intent intent = getIntent();
         final String recipeName =  intent.getStringExtra("name");

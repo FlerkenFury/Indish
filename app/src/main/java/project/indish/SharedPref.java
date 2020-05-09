@@ -16,6 +16,7 @@ public class SharedPref {
 
     public void save(User user) {
         SharedPreferences.Editor editor = sharedPreferences.edit();
+        editor.putString("UserID", user.getUID());
         editor.putString("UserEmail", user.getEmail());
         editor.putString("UserName", user.getName());
         editor.putString("UserImage", user.getImage());
@@ -25,6 +26,7 @@ public class SharedPref {
 
     public User load() {
         User user = new User();
+        user.setUID(sharedPreferences.getString("UserID", ""));
         user.setEmail(sharedPreferences.getString("UserEmail", ""));
         user.setName(sharedPreferences.getString("UserName", ""));
         user.setImage(sharedPreferences.getString("UserImage", ""));

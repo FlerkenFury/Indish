@@ -112,7 +112,7 @@ public class RegisterActivity extends AppCompatActivity {
                                             String upKey = userRef.push().getKey();
                                             Log.d(TAG, "onComplete: adsasd" + upKey);
 
-                                            User user = new User(nameText, emailText, passwordText, "");
+                                            User user = new User(upKey, nameText, emailText, passwordText, "");
 
                                             userRef.child(upKey).setValue(user);
 

@@ -20,6 +20,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.bumptech.glide.Glide;
+import com.google.android.material.textfield.TextInputLayout;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -39,6 +40,10 @@ public class ChangeNameFragment extends Fragment {
 
     private static final String TAG = "ChangeNameFragment";
 
+    private TextInputLayout newName;
+
+    private DatabaseReference mUserRef;
+
     public ChangeNameFragment() {
     }
 
@@ -49,8 +54,11 @@ public class ChangeNameFragment extends Fragment {
         super.onCreate(savedInstanceState);
 
         final Button btnSaveChangePass = view.findViewById(R.id.btn_save_change_name);
-        SharedPref sharedPref =  new SharedPref(getContext());
+        newName = view.findViewById(R.id.change_name_layout);
+        final SharedPref sharedPref =  new SharedPref(getContext());
         final User user = sharedPref.load();
+
+        mUserRef = FirebaseDatabase.getInstance().getReference("user");
 
         btnSaveChangePass.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -58,6 +66,14 @@ public class ChangeNameFragment extends Fragment {
 //                EditText newName = view.findViewById(R.id.new_name);
 //                String newName1 = newName.getText().toString();
                 Toast.makeText(getContext(), "change name success", Toast.LENGTH_LONG).show();
+
+                Log.d(TAG, "onClick: "+ newName.getEditText().getText().toString().trim());
+
+                user.setName(newName.getEditText().getText().toString().trim());
+                sharedPref.save(user);
+
+                mUserRef.child(user.getUID()).setValue(user);
+
                 getActivity().getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, new ProfileFragment()).commit();
             }
         });
