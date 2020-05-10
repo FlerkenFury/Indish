@@ -72,7 +72,7 @@ public class ChangeNameFragment extends Fragment {
                 user.setName(newName.getEditText().getText().toString().trim());
                 sharedPref.save(user);
 
-                mUserRef.child(user.getUID()).setValue(user);
+                mUserRef.child(user.getUID()).child("name").setValue(user.getName());
 
                 getActivity().getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, new ProfileFragment()).commit();
             }

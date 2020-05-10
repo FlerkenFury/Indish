@@ -188,7 +188,7 @@ public class ProfileFragment extends Fragment {
         User user = sharedPref.load();
         user.setImage(imageURL);
         sharedPref.save(user);
-        mUserRef.child(user.getUID()).setValue(user);
+        mUserRef.child(user.getUID()).child("image").setValue(user.getImage());
     }
 
 
