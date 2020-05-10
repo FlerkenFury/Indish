@@ -16,10 +16,10 @@
         android:gravity="center"
         android:orientation="vertical">
 
-<!--        <ImageView-->
-<!--            android:layout_width="200dp"-->
-<!--            android:layout_height="200dp"-->
-<!--            android:src="@drawable/logo_indish_circle_png"/>-->
+        <ImageView
+            android:layout_width="200dp"
+            android:layout_height="200dp"
+            android:src="@drawable/logo_indish"/>
 
         <EditText
             android:id="@+id/regis_et_name"

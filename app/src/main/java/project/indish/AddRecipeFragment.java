@@ -162,6 +162,7 @@ public class AddRecipeFragment extends Fragment {
                                     Uri downloadUrl = uri;
                                     Log.d(TAG, "onSuccess: firebase download url: " + downloadUrl.toString());
                                     imageURL = downloadUrl.toString();
+                                    uploadDatabase();
                                 }
                             });
 
@@ -185,6 +186,11 @@ public class AddRecipeFragment extends Fragment {
 
     private void uploadFile(){
 
+        uploadImage();
+
+    }
+
+    private void uploadDatabase(){
         Recipe recipe = new Recipe();
 
         List<Ingredient> ingredientList = new ArrayList<>();
@@ -228,7 +234,7 @@ public class AddRecipeFragment extends Fragment {
 
         }
 
-        uploadImage();
+//        uploadImage();
         Log.d(TAG, "uploadFile: url: " + imageURL);
 
         String title = titleET.getText().toString().trim();
@@ -243,5 +249,12 @@ public class AddRecipeFragment extends Fragment {
         String uploadID = mRecipeRef.push().getKey();
         mRecipeRef.child(uploadID).setValue(recipe);
 
+        Intent intent = new Intent(getContext(), HomeDrawerActivity.class);
+        startActivity(intent);
+        getActivity().finish();
+
     }
+
 }
+
+
