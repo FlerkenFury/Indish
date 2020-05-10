@@ -4,15 +4,11 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".LoginActivity"
-    android:background="@color/colorPrimary"
+    android:background="@color/colorAccent"
     android:gravity="center"
     android:orientation="vertical"
     android:padding="50dp">
 
-<!--    <ImageView-->
-<!--        android:layout_width="wrap_content"-->
-<!--        android:layout_height="wrap_content"-->
-<!--        android:src="@drawable/logo_indish"/>-->
 
 
     <LinearLayout
@@ -21,6 +17,10 @@
         android:gravity="center"
         android:orientation="vertical">
 
+        <!--    <ImageView-->
+        <!--        android:layout_width="200dp"-->
+        <!--        android:layout_height="200dp"-->
+        <!--        android:src="@drawable/logo_indish_circle_png"/>-->
 
         <EditText
             android:id="@+id/login_et_email"
@@ -28,8 +28,8 @@
             android:layout_height="wrap_content"
             android:hint="Email"
             android:inputType="textEmailAddress"
-            android:textColor="@color/colorAccent"
-            android:theme="@style/ThemeOverlay.AppCompat.Dark"
+            android:textColor="@android:color/black"
+            android:theme="@style/ThemeOverlay.AppCompat.Light"
             tools:layout_editor_absoluteY="273dp" />
 
         <EditText
@@ -39,8 +39,8 @@
             android:layout_height="wrap_content"
             android:hint="Password"
             android:inputType="textPassword"
-            android:textColor="@color/colorAccent"
-            android:theme="@style/ThemeOverlay.AppCompat.Dark"
+            android:textColor="@android:color/black"
+            android:theme="@style/ThemeOverlay.AppCompat.Light"
             tools:layout_editor_absoluteY="329dp" />
 
         <Button
@@ -48,8 +48,9 @@
             android:id="@+id/login_bt_signin"
             android:layout_marginTop="20dp"
             android:layout_height="wrap_content"
-            android:background="@color/colorAccent"
+            android:background="@color/colorPrimary"
             android:text="Sign in"
+            android:theme="@style/ThemeOverlay.AppCompat.Dark"
             tools:layout_editor_absoluteX="161dp"
             tools:layout_editor_absoluteY="455dp" />
 
@@ -61,7 +62,7 @@
             android:clickable="true"
             android:text="Doesn't have an account? Sign up here"
             android:textColor="@color/colorAccent"
-            android:theme="@style/ThemeOverlay.AppCompat.Dark" />
+            android:theme="@style/ThemeOverlay.AppCompat.Light" />
     </LinearLayout>
 
 </RelativeLayout>
