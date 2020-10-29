@@ -13,3 +13,55 @@ Indish is developed using android studio as the IDE (Integrated Development Envi
 
 To check out how indish works, click on the link below:
 https://www.youtube.com/watch?v=VgvWFqLWgWY
+
+To download the apk, please go to the apk folder.
+
+Below are the infographic and screenshots of the Indish app:
+
+Infographic
+![](https://github.com/luisindracahya/Indish/blob/master/Screenshots/Infographic/Indish%20Infographic.png?raw=true)
+
+Splash Screen
+![](https://github.com/luisindracahya/Indish/blob/master/Screenshots/1%20Splash%20Screen.jpg?raw=true)
+
+Login
+![](https://github.com/luisindracahya/Indish/blob/master/Screenshots/2%20Login.jpg?raw=true)
+
+Register
+![](https://github.com/luisindracahya/Indish/blob/master/Screenshots/3%20Register.jpg?raw=true)
+
+Home
+![](https://github.com/luisindracahya/Indish/blob/master/Screenshots/4%20Home.png?raw=true)
+
+Home 2 (Dropdown List)
+![](https://github.com/luisindracahya/Indish/blob/master/Screenshots/5%20Home%202%20(Dropdown%20List).jpg?raw=true)
+
+Home 3
+![](https://github.com/luisindracahya/Indish/blob/master/Screenshots/6%20Home%203.jpg?raw=true)
+
+Home Drawer
+![](https://github.com/luisindracahya/Indish/blob/master/Screenshots/7%20Home%20Drawer.jpg?raw=true)
+
+Home Drawer 2
+![](https://github.com/luisindracahya/Indish/blob/master/Screenshots/8%20Home%20Drawer%202.jpg?raw=true)
+
+Profile
+![](https://github.com/luisindracahya/Indish/blob/master/Screenshots/9%20Profile.png?raw=true)
+
+Profile 2
+![](https://github.com/luisindracahya/Indish/blob/master/Screenshots/10%20Profile%202.jpg?raw=true)
+
+Change Name
+![](https://github.com/luisindracahya/Indish/blob/master/Screenshots/11%20Change%20Name.jpg?raw=true)
+
+Change Password
+![](https://github.com/luisindracahya/Indish/blob/master/Screenshots/12%20Change%20Password.jpg?raw=true)
+
+Add Recipe
+![](https://github.com/luisindracahya/Indish/blob/master/Screenshots/13%20Add%20Recipe.jpg?raw=true)
+
+Add Recipe 2
+![](https://github.com/luisindracahya/Indish/blob/master/Screenshots/14%20Add%20Recipe%202.jpg?raw=true)
+
+Recipe
+![](https://github.com/luisindracahya/Indish/blob/master/Screenshots/15%20Recipe.jpg?raw=true)
