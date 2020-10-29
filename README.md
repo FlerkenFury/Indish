@@ -18,50 +18,50 @@ To download the apk, please go to the apk folder.
 
 Below are the infographic and screenshots of the Indish app:
 
-- Infographic
+- Infographic<br/>
 ![](https://github.com/luisindracahya/Indish/blob/master/Screenshots/Infographic/Indish%20Infographic.png?raw=true)
 
-- Splash Screen
+- Splash Screen<br/>
 ![](https://github.com/luisindracahya/Indish/blob/master/Screenshots/1%20Splash%20Screen.jpg?raw=true)
 
-- Login
+- Login<br/>
 ![](https://github.com/luisindracahya/Indish/blob/master/Screenshots/2%20Login.jpg?raw=true)
 
-- Register
+- Register<br/>
 ![](https://github.com/luisindracahya/Indish/blob/master/Screenshots/3%20Register.jpg?raw=true)
 
-- Home
+- Home<br/>
 ![](https://github.com/luisindracahya/Indish/blob/master/Screenshots/4%20Home.png?raw=true)
 
-- Home 2 (Dropdown List)
+- Home 2 (Dropdown List)<br/>
 ![](https://github.com/luisindracahya/Indish/blob/master/Screenshots/5%20Home%202%20(Dropdown%20List).jpg?raw=true)
 
-- Home 3
+- Home 3<br/>
 ![](https://github.com/luisindracahya/Indish/blob/master/Screenshots/6%20Home%203.jpg?raw=true)
 
-- Home Drawer
+- Home Drawer<br/>
 ![](https://github.com/luisindracahya/Indish/blob/master/Screenshots/7%20Home%20Drawer.jpg?raw=true)
 
-- Home Drawer 2
+- Home Drawer 2<br/>
 ![](https://github.com/luisindracahya/Indish/blob/master/Screenshots/8%20Home%20Drawer%202.jpg?raw=true)
 
-- Profile
+- Profile<br/>
 ![](https://github.com/luisindracahya/Indish/blob/master/Screenshots/9%20Profile.png?raw=true)
 
-- Profile 2
+- Profile 2<br/>
 ![](https://github.com/luisindracahya/Indish/blob/master/Screenshots/10%20Profile%202.jpg?raw=true)
 
-- Change Name
+- Change Name<br/>
 ![](https://github.com/luisindracahya/Indish/blob/master/Screenshots/11%20Change%20Name.jpg?raw=true)
 
-- Change Password
+- Change Password<br/>
 ![](https://github.com/luisindracahya/Indish/blob/master/Screenshots/12%20Change%20Password.jpg?raw=true)
 
-- Add Recipe
+- Add Recipe<br/>
 ![](https://github.com/luisindracahya/Indish/blob/master/Screenshots/13%20Add%20Recipe.jpg?raw=true)
 
-- Add Recipe 2
+- Add Recipe 2<br/>
 ![](https://github.com/luisindracahya/Indish/blob/master/Screenshots/14%20Add%20Recipe%202.jpg?raw=true)
 
-- Recipe
+- Recipe<br/>
 ![](https://github.com/luisindracahya/Indish/blob/master/Screenshots/15%20Recipe.jpg?raw=true)
